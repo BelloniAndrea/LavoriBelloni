@@ -1,0 +1,97 @@
+<html>
+<!DOCTYPE html>
+
+<style>
+ body {
+        font-family: "Comic Sans MS";
+        background-color: rgba(58, 6, 73, 0.736);
+        color: rgba(229, 214, 11, 0.912);
+}
+.output {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.table{
+    border-collapse: collapse;
+}
+table, td {
+    border: 3px solid black;
+}
+th, td {
+    text-align: left;
+    width: 20px;
+}
+</style>
+
+
+<script>
+//creazione prima riga matrice
+let matrice=[["cognome", "nome", "indirizzo", "citta","CAP",]];
+function presaValori(){
+    
+    //presa in input dei valori
+    let cognome=document.getElementById("lastname").value
+    let nome=document.getElementById("firstname").value
+    let indirizzo=document.getElementById("address").value
+    let citta=document.getElementById("city").value
+    let cap=document.getElementById("postalcode").value
+    //inserimento dei dati nella matrice
+    matrice.push([cognome, nome, indirizzo,citta, cap])
+    console.log(matrice)
+}
+function displayValues(){
+    //creazione tabella
+    
+    let tabella= document.createElement("table")
+    let newRighe
+    for(let riga=0; riga<matrice.length; riga++){
+            newRighe=document.createElement("tr")
+        for(let colonna=0; colonna<matrice[riga].length; colonna++){
+            let contenuto= document.createElement("td")
+            contenuto.textContent = matrice[riga][colonna]
+            newRighe.appendChild(contenuto) //appensione del contenuto di una variabile della matrice alla riga della tabella
+        }
+        tabella.appendChild(newRighe)
+    }
+    
+
+    let outputDiv = document.getElementById("output")// collegamento al div di output tramite una variabile
+    outputDiv.innerHTML = "" //pulizia tabella mostrata precedentemente
+    //appensione della tabella creata alla variabile di output
+    outputDiv.appendChild(tabella)
+}
+function inviadati(){
+
+    let matriceJSON = JSON.stringify(matrice); //conversione di tutta la matrice in una string per essere salvata nel local storage
+    
+    localStorage.setItem("tabella", matriceJSON); //invio al local storage della matrice trasformata
+
+}
+</script>
+<body>
+
+    <h1>Modulo di Registrazione</h1>
+    <form id="registrationForm">
+        <label for="lastname">Cognome:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+
+        <label for="firstname">Nome:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+
+        <label for="address">Indirizzo:</label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="city">Città:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="postalcode">CAP:</label>
+        <input type="text" id="postalcode" name="postalcode" required><br><br>
+
+        <button type="button" onclick="presaValori()">memorizza valori</button>
+        <button type="button" onclick="displayValues()">mostra  valori</button>
+        <button type="button" onclick="inviadati()"> invia alla seconda pagina</button>
+    </form>
+
+    <div id="output" class="output"></div>
+</body>
+</html>

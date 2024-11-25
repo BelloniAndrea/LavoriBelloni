@@ -62,9 +62,7 @@ function displayValues(){
 }
 function inviadati(){
 
-    let matriceJSON = JSON.stringify(matrice); //conversione di tutta la matrice in una string per essere salvata nel local storage
-    
-    localStorage.setItem("tabella", matriceJSON); //invio al local storage della matrice trasformata
+    localStorage.setItem("tabella", matrice); //invio al local storage della matrice trasformata
 
 }
 </script>

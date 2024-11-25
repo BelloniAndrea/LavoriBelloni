@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    body{
+        text-align: center;
+        font-size: 25px;
+    }
+</style>
+<script>
+   function formulaQuadratica() {
+    let a =document.getElementById("a").value;
+    let b =document.getElementbyId("b").value;
+    let c =document.getElementById("c").value;
+    let delta=(b*b) - (a*c);
+    let x1;
+    let x2;
+    if (delta>0 || delta==0){
+        x1= (-b+ Math.sqrt(delta))/(2*a);
+        x2= (-b- Math.sqrt(delta))/(2*a);
+        document.getElementById("aD").innerHTML = "Le radici del polinomio sono" + x1 + " " + x2;
+    }
+    else{
+        document.getElementById("aD").innerHTML = "La radice del polinomio non è un numero reale";
+    }
+}
+
+</script>
+</head>
+<body>
+
+    <label for="a">inserisci il coefficiente "a"</label>
+    <input type="number" id="a" name="a">
+
+    <label for="b">inserisci il coefficiente "b"</label>
+    <input type="number" id="b" name="b">
+
+    
+    <label for="c">inserisci il coefficiente "c"</label>
+    <input type="number" id="c" name="c">
+
+    <br> 
+    <br>
+    <input type="button" value="Cliccami" onclick="formulaQuadratica()">
+    <br>
+    <br>
+<p id="aD"> </p>
+</body>
+</html>

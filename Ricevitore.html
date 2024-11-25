@@ -24,18 +24,22 @@ th, td {
 </style>
 <script>
     let matrice = localStorage.getItem("tabella"); //ottenimento matrice dal local storage 
-    matrice = JSON.parse(matrice); //ritrasformazione della matrice da string a oggetto matrice
 
 function displayValues(){
     //creazione tabella
     
     let tabella= document.createElement("table")
     let newRighe
-    for(let riga=0; riga<matrice.length; riga++){
+    let arrayM=matrice.split(",")
+    console.log(arrayM);
+    let NColonne=5;//divisore uguale al numero di colonne presenti nella tabella usato per iterare la matrice
+    let NRighe=arrayM.length/5;
+
+    for(let riga=0; riga<arrayM.length/NColonne; riga++){
             newRighe=document.createElement("tr")
-        for(let colonna=0; colonna<matrice[riga].length; colonna++){
+        for(let colonna=0; colonna<arrayM.length/NRighe; colonna++){
             let contenuto= document.createElement("td")
-            contenuto.textContent = matrice[riga][colonna]
+            contenuto.textContent = arrayM[colonna+(5*riga)]
             newRighe.appendChild(contenuto) //appensione del contenuto di una variabile della matrice alla riga della tabella
         }
         tabella.appendChild(newRighe)
@@ -54,4 +58,5 @@ function displayValues(){
     <button type="button" onclick="displayValues()">Ricevi dati</button>
     <div id="output" class="output"></div>
 </body>    
+</html>
 </html>

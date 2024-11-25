@@ -1,0 +1,57 @@
+<html>
+<!DOCTYPE html>
+
+<style>
+ body {
+        font-family: "Comic Sans MS";
+        background-color: rgba(58, 6, 73, 0.736);
+        color: rgba(229, 214, 11, 0.912);
+}
+.output {
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.table{
+    border-collapse: collapse;
+}
+table, td {
+    border: 3px solid black;
+}
+th, td {
+    text-align: left;
+    width: 20px;
+}
+</style>
+<script>
+    let matrice = localStorage.getItem("tabella"); //ottenimento matrice dal local storage 
+    matrice = JSON.parse(matrice); //ritrasformazione della matrice da string a oggetto matrice
+
+function displayValues(){
+    //creazione tabella
+    
+    let tabella= document.createElement("table")
+    let newRighe
+    for(let riga=0; riga<matrice.length; riga++){
+            newRighe=document.createElement("tr")
+        for(let colonna=0; colonna<matrice[riga].length; colonna++){
+            let contenuto= document.createElement("td")
+            contenuto.textContent = matrice[riga][colonna]
+            newRighe.appendChild(contenuto) //appensione del contenuto di una variabile della matrice alla riga della tabella
+        }
+        tabella.appendChild(newRighe)
+    }
+    
+
+    let outputDiv = document.getElementById("output")// collegamento al div di output tramite una variabile
+    outputDiv.innerHTML = "" //pulizia tabella mostrata precedentemente
+    //appensione della tabella creata alla variabile di output
+    outputDiv.appendChild(tabella)
+}
+</script>
+
+<body>
+    <h2>Elenco Dati</h2>
+    <button type="button" onclick="displayValues()">Ricevi dati</button>
+    <div id="output" class="output"></div>
+</body>    
+</html>

@@ -84,16 +84,14 @@ function creaTab(tab){
     let newRighe
     let arrayT=tab.split(","|| "/\r?\n/")
     console.log(arrayT);
-    let NColonne=2
-    let NRighe=arrayT.length/2
+    let NColonne
+    let newRighe
+         Ncolonne=arrayT[riga].split(",");
 
-
-    for(let riga=0; riga<arrayT.length/NColonne; riga++){
-            newRighe=document.createElement("tr")
-        for(let colonna=0; colonna<arrayT.length/NRighe; colonna++){
+       for(let colonna=0; colonna<Ncolonne.length; colonna++){
             let contenuto= document.createElement("td")
-            contenuto.textContent = arrayT[colonna+(2*riga)]
-            newRighe.appendChild(contenuto) 
+            contenuto.textContent = Ncolonne[colonna];
+            newRighe.appendChild(contenuto);
         }
         tabella.appendChild(newRighe)
     }

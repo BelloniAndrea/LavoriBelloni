@@ -80,22 +80,24 @@ creaTab(contenuto); // Crea la tabella
 
 //funzione per la creazione della tabella
 function creaTab(tab){
-    let tabella= document.createElement("table")
-    let newRighe
-    let arrayT=tab.split(","|| "/\r?\n/")
-    console.log(arrayT);
-    let NColonne
-    let newRighe
-         Ncolonne=arrayT[riga].split(",");
+    let tabella= document.createElement("table");
+    let newRighe;
+    let arrayT=tab.split("\n");
+   // console.log(arrayT);
+    let NColonne;
+   
 
-       for(let colonna=0; colonna<Ncolonne.length; colonna++){
+    for(let riga=0; riga<arrayT.length; riga++){
+            newRighe=document.createElement("tr");
+            Ncolonne=arrayT[riga].split(",");
+        for(let colonna=0; colonna<Ncolonne.length; colonna++){
             let contenuto= document.createElement("td")
             contenuto.textContent = Ncolonne[colonna];
             newRighe.appendChild(contenuto);
         }
         tabella.appendChild(newRighe)
     }
-    
+   
 
     let outputDiv = document.getElementById("output")
     outputDiv.innerHTML = ""

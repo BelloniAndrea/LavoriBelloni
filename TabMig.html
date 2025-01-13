@@ -60,6 +60,9 @@
         td:nth-child(even) {
             background-color: #f9f9f9; 
         }
+         canvas{
+            float: right;      
+         }
     </style>
 <script>
 //funzione di lettura del file
@@ -109,6 +112,8 @@ function creaTab(tab){
     <h1>Tabella Migranti</h1>
     <input type="file" onchange="leggiFile(this)">
 
-    <div id="output" class="output"></div>
+    <div id="output" class="output">
+         <canvas id="myCanvas" width="1000" height="1500" style="border:2px solid grey"></canvas>
+    </div>
 </body>
 </html>

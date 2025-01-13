@@ -65,15 +65,6 @@
          }
     </style>
 <script>
-//Prova canva
-const c = document.getElementById("myCanvas");
-const ctx = c.getContext("2d");
-ctx.beginPath();
-ctx.moveTo(0, 20);
-ctx.lineTo(200, 1000);
-ctx.lineTo(700, 1000);
-ctx.strokeStyle = "red";
-ctx.stroke();
 
          
 //funzione di lettura del file
@@ -124,7 +115,6 @@ function creaTab(tab){
     <input type="file" onchange="leggiFile(this)">
 
     <div id="output" class="output">
-         <canvas id="myCanvas" width="1000" height="1500" style="border:2px solid grey"></canvas>
     </div>
 </body>
 </html>

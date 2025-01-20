@@ -77,7 +77,7 @@ lettoreF.readAsText(file);
 lettoreF.onload = function() {
 let contenuto = lettoreF.result; // Contenuto del file letto
 creaTab(contenuto); // Crea la tabella
-//creaGraf(contenuto);
+creaGraf(contenuto);
 }
 
 
@@ -109,11 +109,10 @@ function creaTab(tab){
     outputDiv.innerHTML = ""
     outputDiv.appendChild(tabella)
 }
-//function creaGraf(datiG){
-         //<canvas id="myCanvas" width="1000" height="1000" style="border:1px solid black;">
-                           
-         //</canvas>
-//}
+function creaGraf(datiG){
+const c = document.getElementById("myCanvas"); //creazione del canva e colorazione
+const ctx = c.getContext("2d");        
+}
 </script>
 
 <body>
@@ -121,5 +120,8 @@ function creaTab(tab){
     <input type="file" onchange="leggiFile(this)">
 
     <div id="output" class="output"></div>
+    <canvas id="myCanvas" width="1000" height="1000" style="border:1px solid black;">
+                           
+    </canvas>     
 </body>
 </html>

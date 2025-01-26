@@ -60,9 +60,11 @@
         td:nth-child(even) {
             background-color: #f9f9f9; 
         }
-         canvas{
-              
-         }
+        #myCanvas {
+        display: block; 
+        margin: 20px auto;
+        border: 1px solid black;
+    }
     </style>
 <script>
 
@@ -110,11 +112,81 @@ function creaTab(tab){
     outputDiv.appendChild(tabella)
 }
 function creaGraf(datiG){
-const c = document.getElementById("myCanvas"); //creazione del canva e colorazione
+const c = document.getElementById("myCanvas"); //creazione del canva per il grafico
 const ctx = c.getContext("2d"); 
+
+//inizializzazione dati per disegno assi
+const paddingAssi= 50
+const altezza= c.height;
+const lunghezza= c.width-10;
 //asse y         
-ctx.beginpath();         
+ctx.beginPath();
+ctx.moveTo(paddingAssi, altezza);
+ctx.lineTo(paddingAssi, 0);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
+ctx.stroke();         
 //asse x
+ctx.beginPath();
+ctx.moveTo(0, altezza - paddingAssi);
+ctx.lineTo(lunghezza, altezza - paddingAssi);
+ctx.strokeStyle = "black";
+ctx.lineWidth = 2;
+ctx.stroke();
+
+//creazione divisione su asse y
+const maxYValue = 200000; // Valore massimo sull'asse Y
+const stepY = maxYValue / 10; // Incremento tra i valori
+for(let i=0; i<11; i++){
+    ctx.beginPath();
+    a=(altezza-paddingAssi)/10; //variabile usata per la suddivisione in 10 parti dell'asse 
+    ctx.moveTo(paddingAssi, altezza - paddingAssi-a * i);
+    ctx.lineTo(paddingAssi-10, altezza- paddingAssi-a*i);
+    ctx.strokeStyle = "black";
+    ctx.stroke();
+
+    // Etichette asse Y
+    ctx.fillStyle = "black";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    let yPos = altezza - paddingAssi - (i * ((altezza - paddingAssi) / 10));
+    ctx.fillText((i * stepY).toFixed(0), paddingAssi - 15, yPos);
+}
+//creazione divisione su asse x
+for(let i=0; i<25; i++){
+    ctx.beginPath();
+    a = (lunghezza - paddingAssi)/24;
+    ctx.moveTo(paddingAssi + a * i, altezza - paddingAssi);   
+    ctx.lineTo(paddingAssi + a * i, altezza - paddingAssi + 10);
+    ctx.stroke();
+}
+
+let array1=datiG.split("\n");
+
+//creazione etichette asse X
+for(let i= 1; i<25; i++){
+    ctx.fillStyle = "black";
+    ctx.textAlign = "right";
+    ctx.textBaseline = "middle";
+    arrayAN=array1[i].split(",");
+    let xPos=(paddingAssi + ((lunghezza - paddingAssi)/24) * i)
+    ctx.fillText(arrayAN[0], xPos, altezza - paddingAssi + 15 );
+}
+
+//creazione punti grafico
+ctx.beginPath();
+ctx.lineWidth = 1;
+ctx.moveTo(paddingAssi, altezza-paddingAssi);
+let xPunto; //variabili usate per rendere il codice più leggibile alle quali verranno assegnate le x e y dei punti ricavati dal file .CSV
+let yPunto
+for(let i=1; i<25; i++){
+    arrayAN=array1[i].split(",");
+    xPunto=paddingAssi + a * i;
+    yPunto=arrayAN[1]/1000;
+    ctx.lineTo(xPunto, yPunto);
+    ctx.stroke();
+}
+
 }
 </script>
 
@@ -123,7 +195,7 @@ ctx.beginpath();
     <input type="file" onchange="leggiFile(this)">
 
     <div id="output" class="output"></div>
-    <canvas id="myCanvas" width="750" height="750" style="border:1px solid black;">
+    <canvas id="myCanvas" width="900" height="700" style="border:1px solid black;">
                            
     </canvas>     
 </body>

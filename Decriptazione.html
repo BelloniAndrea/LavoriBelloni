@@ -59,13 +59,12 @@ label{
 </style>
 
 <script>
-    let segretoC = localStorage.getItem("segreto"); 
-    let dizionario= localStorage.getItem("dizionario")
-    console.log(segretoC)
-    console.log(dizionario)
-
  function decripta(){
-  let segretoDecriptato[]
+  let segretoC = localStorage.getItem("segreto"); 
+  let dizionario= localStorage.getItem("dizionario")
+  console.log(segretoC)
+  console.log(dizionario)
+  let segretoDecriptato= []
   const chiave = parseInt(document.getElementById("chiave").value)
   for(let i = 0; i < segretoC.length; i++){
         let j   

@@ -59,19 +59,39 @@ label{
 </style>
 
 <script>
-    let segretoC = localStorage.getItem("segreto"); 
-    let dizionario= localStorage.getItem("dizionario")
+    let segretoC[] = localStorage.getItem("segreto"); 
+    let dizionario[]= localStorage.getItem("dizionario")
     console.log(segretoC)
+    console.log(dizionario)
 
  function decripta(){
+  let segretoDecriptato[]
+  const chiave = parseInt(document.getElementById("chiave").value)
+  for(let i = 0; i < segretoC.length; i++){
+        let j   
+        for (j = 0; j < dizionario.length; j++) {   
+            if (dizionario[j] == segretoC[i]) {
+                break;
+            }
+        }
+        let nuovoIndice = j - chiave; 
+        if (nuovoIndice < 0) {
+            nuovoIndice = nuovoIndice + dizionario.length; // Ripetizione del dizionario nel caso l'indice diventi negativo
+        }
+        segretoDecriptato.push(dizionario[nuovoIndice])
+    }
+    
+    // Unisci il risultato in una stringa
+    let decriptato = segretoDecriptato.join('');
+  
+  document.getElementById("output").innerHTML= "il segreto decriptato è: " +decriptato
+
 
 </script>
 <body>
     <label for="chiave">Inserire prima la chiave di Decriptazione !</label> <br> <br>
     <input type="number" id="chiave" name="chiave">   <br>
     <button type="button" onclick="decripta()"> Decripta!</button>
-
-
-
+     <div id="output" class="output"></div>
 
 </body>

@@ -85,7 +85,8 @@ function criptazione(chiave, segreto){
     segretoCriptato.push(dizionario[nuovoIndice])
     
     }
-    localStorage.setItem("segreto", segretoCriptato)
+    localStoragegre.setItem("segreto", segretoCriptato)
+    localStoragegre.setItem("dizionario", dizionario)
     let criptato= segretoCriptato.join('');
     document.getElementById("output").innerHTML= "il segreto criptato è: " +criptato
 }

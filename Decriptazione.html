@@ -60,8 +60,10 @@ label{
 
 <script>
  function decripta(){
-  let segretoC = localStorage.getItem("segreto"); 
+  let segretoC = localStorage.getItem("segreto")
+  segretoC=segretoC.split(,)
   let dizionario= localStorage.getItem("dizionario")
+  dizionario= dizionario.split(,)
   console.log(segretoC)
   console.log(dizionario)
   let segretoDecriptato= []

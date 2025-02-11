@@ -17,6 +17,15 @@ h1 {
             margin-bottom: 30px;
             color:#080779;
         }
+p {
+    font-family: 'Franklin Gothic Medium';
+            font-size: 20px;
+            color: #2c2c2c;
+            margin-left: 10px;
+            color:#080779;
+            float: left;
+            margin-top: 10px;
+}
 input[type="file"] {
             padding: 10px;
             font-size: 1em;
@@ -25,12 +34,14 @@ input[type="file"] {
             border: 1px solid #080779;
             margin-left: 41%;
             box-shadow: 0px 4px 10px rgba(2, 12, 71, 0.904);
+            margin-right: 10px;
+            float: left;
         }
 input[type="number"]{
     padding: 10px;
     font-size: 1em;
     margin-bottom: 20px;
-    margin-left: 44%;
+    margin-left: 42%;
 }
  button[type="button"]{
      padding: 10px;
@@ -47,32 +58,53 @@ label{
     font-size: 25px;
 }
 .output {
-            width: 90%;
-            max-width: 1200px;
-            background-color: #ffffff;
-            box-shadow: 0px 4px 10px rgba(2, 12, 71, 0.904);
-            padding: 20px;
-            margin-left: 17%;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(2, 12, 71, 0.904);
+    padding: 20px;
+    margin-left: 17%;
         }
 
 
 </style>
 
 <script>
-let dizionario=["a", "b", "c", "d","e","f", "g", "h", "i", "j","k","l","m","n","o","p", "q", "r", "s", "t", "u","v", "x", "y"," ", "!", "£", "¥", ",", ".", "ñ" ]
-function leggiFile(input){
-const chiave = parseInt(document.getElementById("chiave").value); //cast con parseInt per il funzionamento del nuovoIndice
-let file = input.files[0] //presa in input del file
-let lettoreF = new FileReader() //creazione oggetto filereader
-lettoreF.readAsText(file);
+let dizionario=[]
 
-lettoreF.onload = function() {
-    let segreto= lettoreF.result;
-    console.log(chiave);
-    console.log(segreto);
-    criptazione(chiave, segreto)
+function leggiDizionario() {
+    let inputFile = document.getElementById("alfabetoFile"); //prendi file
+    let file = inputFile.files[0]; // Accedi al file
+    let lettoreF = new FileReader(); 
+    lettoreF.readAsText(file);
+    lettoreF.onload = function () {
+        let contenutoFile = lettoreF.result;
+        let righe = contenutoFile.split("\n"); // Splitta in righe
+        for (let i = 0; i < righe.length; i++) {
+            let colonne = righe[i].split(","); // Splitta colonne
+            for (let j = 0; j < colonne.length; j++) {
+                dizionario.push(colonne[j]); // aggiungi al dizionario
+            }
+        }
+        console.log("Dizionario ", dizionario);
+    }
 }
+
+function leggiSegreto() {
+    const chiave = parseInt(document.getElementById("chiave").value); 
+    let inputFile = document.getElementById("segretoFile"); 
+    let file = inputFile.files[0]; 
+    let lettoreF = new FileReader(); 
+    lettoreF.readAsText(file);
+
+    lettoreF.onload = function() {
+        let segreto = lettoreF.result;
+        console.log(chiave);
+        console.log(segreto);
+        criptazione(chiave, segreto);
+    }
 }
+
 function criptazione(chiave, segreto){
     let segretoCriptato = []
     for(let i=0; i<segreto.length; i++){
@@ -96,9 +128,10 @@ function criptazione(chiave, segreto){
     let criptato= segretoCriptato.join('');
     document.getElementById("output").innerHTML= "il segreto criptato è: " +criptato
 }
+
+//funzione di indirizzamento alla nuova pagina
 function decripta(){
       location.href="https://belloniandrea.github.io./LavoriBelloni/Decriptazione"
-
 
 }
 
@@ -107,8 +140,9 @@ function decripta(){
 
 <body>
     <h1>Criptazione!!</h1>
-    <input type="file" onchange="leggiFile(this)"> <br>
-    <label for="chiave">Inserire prima la chiave di Criptazione !</label> <br> <br>
+    <input type="file" id="alfabetoFile" onchange="leggiDizionario(this)"> <p> Alfabeto (file.CSV)</p><br>
+    <input type="file" id="segretoFile" onchange="leggiSegreto(this)"> <p> File da criptare</p> <br>
+    <label for="chiave">Inserire prima l'alfabeto e la chiave di Criptazione !</label> <br> <br>
     <input type="number" id="chiave" name="chiave">   <br>
     <button type="button" onclick="decripta()"> Decripta!</button>
     <div id="output" class="output"></div>

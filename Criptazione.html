@@ -70,73 +70,87 @@ label{
 </style>
 
 <script>
-let dizionario=[]
+        let dizionario = [];
 
-function leggiDizionario() {
-    let inputFile = document.getElementById("alfabetoFile"); //prendi file
-    let file = inputFile.files[0]; // Accedi al file
-    let lettoreF = new FileReader(); 
-    lettoreF.readAsText(file);
-    lettoreF.onload = function () {
-        let contenutoFile = lettoreF.result;
-        let righe = contenutoFile.split("\n"); // Splitta in righe
-        for (let i = 0; i < righe.length; i++) {
-            let colonne = righe[i].split(","); // Splitta colonne
-            for (let j = 0; j < colonne.length; j++) {
-                dizionario.push(colonne[j]); // aggiungi al dizionario
+        // Funzione per leggere il dizionario (alfabeto)
+        function leggiDizionario() {
+            let inputFile = document.getElementById("alfabetoFile");
+            let file = inputFile.files[0];
+            if (!file) {
+                alert("Per favore, carica un file di alfabeto.");
+                return;
+            }
+
+            let lettoreF = new FileReader();
+            lettoreF.readAsText(file);
+            lettoreF.onload = function () {
+                let contenutoFile = lettoreF.result;
+                let righe = contenutoFile.split("\n");
+                for (let i = 0; i < righe.length; i++) {
+                    let colonne = righe[i].split(",");
+                    for (let j = 0; j < colonne.length; j++) {
+                        dizionario.push(colonne[j]);
+                    }
+                }
+                console.log("Dizionario caricato:", dizionario);
             }
         }
-        console.log("Dizionario ", dizionario);
-    }
-}
 
-function leggiSegreto() {
-    const chiave = parseInt(document.getElementById("chiave").value); 
-    let inputFile = document.getElementById("segretoFile"); 
-    let file = inputFile.files[0]; 
-    let lettoreF = new FileReader(); 
-    lettoreF.readAsText(file);
+        // Funzione per leggere il file segreto
+        function leggiSegreto() {
+            const chiave = parseInt(document.getElementById("chiave").value);
+            if (isNaN(chiave) || chiave <= 0) {
+                alert("Inserisci una chiave di criptazione valida.");
+                return;
+            }
 
-    lettoreF.onload = function() {
-        let segreto = lettoreF.result;
-        console.log(chiave);
-        console.log(segreto);
-        criptazione(chiave, segreto);
-    }
-}
+            let inputFile = document.getElementById("segretoFile");
+            let file = inputFile.files[0];
+            if (!file) {
+                alert("Per favore, carica un file da criptare.");
+                return;
+            }
 
-function criptazione(chiave, segreto){
-    let segretoCriptato = []
-    for(let i=0; i<segreto.length; i++){
-     let j   
-        for (j = 0; j < dizionario.length; j++) {   //individuazione dell'indice
-            if (dizionario[j] == segreto[i]) {
-                break;
+            let lettoreF = new FileReader();
+            lettoreF.readAsText(file);
+
+            lettoreF.onload = function () {
+                let segreto = lettoreF.result;
+                console.log("Chiave:", chiave);
+                console.log("Segreto:", segreto);
+                criptazione(chiave, segreto);
             }
         }
-    console.log(j)
-    let nuovoIndice = j + chiave
-    if (nuovoIndice >= dizionario.length) {
-            nuovoIndice = nuovoIndice - dizionario.length; //ripetizione del dizionario 
+
+        // Funzione per criptare il segreto
+        function criptazione(chiave, segreto) {
+            let segretoCriptato = [];
+            for (let i = 0; i < segreto.length; i++) {
+                let j;
+                for (j = 0; j < dizionario.length; j++) {
+                    if (dizionario[j] === segreto[i]) {
+                        break;
+                    }
+                }
+
+                let nuovoIndice = j + chiave;
+                if (nuovoIndice >= dizionario.length) {
+                    nuovoIndice = nuovoIndice - dizionario.length;
+                }
+                segretoCriptato.push(dizionario[nuovoIndice]);
+            }
+
+            localStorage.setItem("segreto", segretoCriptato);
+            localStorage.setItem("dizionario", dizionario);
+            let criptato = segretoCriptato.join('');
+            document.getElementById("output").innerHTML = "Il segreto criptato è: " + criptato;
         }
-    console.log(nuovoIndice) 
-    segretoCriptato.push(dizionario[nuovoIndice])
-    
-    }
-    localStorage.setItem("segreto", segretoCriptato)
-    localStorage.setItem("dizionario", dizionario)
-    let criptato= segretoCriptato.join('');
-    document.getElementById("output").innerHTML= "il segreto criptato è: " +criptato
-}
 
-//funzione di indirizzamento alla nuova pagina
-function decripta(){
-      location.href="https://belloniandrea.github.io./LavoriBelloni/Decriptazione"
-
-}
-
-</script>
-
+        // Funzione per navigare alla pagina di decriptazione
+        function decripta() {
+            location.href = "https://belloniandrea.github.io./LavoriBelloni/Decriptazione";
+        }
+    </script>
 
 <body>
     <h1>Criptazione!!</h1>

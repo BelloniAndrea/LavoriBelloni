@@ -106,10 +106,8 @@ label{
 
             let inputFile = document.getElementById("segretoFile");
             let file = inputFile.files[0];
-            if (!file) {
-                alert("Per favore, carica un file da criptare.");
-                return;
-            }
+            
+            
 
             let lettoreF = new FileReader();
             lettoreF.readAsText(file);

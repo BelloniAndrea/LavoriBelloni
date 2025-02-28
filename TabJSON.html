@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    font-family: "Times New Roman";
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.736);
+    color: rgba(253, 253, 250, 0.912);
+    text-align: center; 
+}
+
+.container1, .container2 {
+    width: 45%; 
+    padding: 10px;
+    margin: 20px;
+    display: inline-block; 
+    vertical-align: top; 
+}
+
+.container1 {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.container2 {
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+form {
+    margin-top: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    margin: 10px 5px; 
+}
+
+button:hover {
+    background-color: #6c757d;
+    color: white;
+}
+
+.clear {
+    clear: both; 
+}
+
+</style>
+</head>
+<body>
+
+<div class="container1">
+    <h1>Modulo di Registrazione</h1>
+    <form id="registrationForm">
+        <label for="lastname">Cognome:</label>
+        <input type="text" id="lastname" name="lastname" required><br><br>
+
+        <label for="firstname">Nome:</label>
+        <input type="text" id="firstname" name="firstname" required><br><br>
+
+        <label for="address">Indirizzo:</label>
+        <input type="text" id="address" name="address" required><br><br>
+
+        <label for="city">Città:</label>
+        <input type="text" id="city" name="city" required><br><br>
+
+        <label for="postalcode">CAP:</label>
+        <input type="text" id="postalcode" name="postalcode" required><br><br>
+    </form>
+</div>
+
+<div class="container2">
+    <h1>Corsi</h1>
+    <form id="registrationForm">
+        <label for="corso1">Corso 1:</label>
+        <input type="text" id="corso1" name="corso1" required><br><br>
+
+        <label for="corso2">Corso 2:</label>
+        <input type="text" id="corso2" name="corso2" required><br><br>
+
+        <label for="corso3">Corso 3:</label>
+        <input type="text" id="corso3" name="corso3" required><br><br>
+    </form>
+</div>
+
+<div class="clear"></div> <!-- Azzera il float per evitare sovrapposizioni -->
+
+<div>
+    <!-- Centra i bottoni -->
+    <button type="button" onclick="prendiV()">prendi valori</button>
+    <button type="button" onclick="inviadati()"> invia alla seconda pagina</button>
+</div>
+
+<script>
+function prendiV() {
+    //variabili anagrafici
+    let cognome = document.getElementById("lastname").value;
+    let nome = document.getElementById("firstname").value;
+    let indirizzo = document.getElementById("address").value;
+    let citta = document.getElementById("city").value;
+    let cap = document.getElementById("postalcode").value;
+    
+    //variabili corsi scelti
+    let corso1=document.getElementById("corso1").value;
+    let corso2=document.getElementById("corso2").value;
+    let corso3=document.getElementById("corso3").value;
+
+    //lista di oggetti da inviare
+    let tab = {
+        cognome: cognome,
+        nome: nome,
+        indirizzo: indirizzo,
+        citta: citta,
+        cap: cap,
+        corsi: [corso1, corso2, corso3]
+    }
+    
+    //trasformazione lista in string con JSON
+    const mytabJSON = JSON.stringify(tab);
+    console.log(mytabJSON);
+    localStorage.setItem("dati", mytabJSON); 
+}
+
+function inviadati() {
+    location.href = "RicevitoreJSON.html";
+}
+</script>
+
+</body>
+</html>

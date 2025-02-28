@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<head>
+    <title>Tabella</title>
+    <style>
+        body {
+            font-family: "Times New Roman";
+            font-size: 20px;
+            background-color: rgba(0, 0, 0, 0.736);
+            color: rgba(253, 253, 250, 0.912);
+            text-align: center; 
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            color: rgba(253, 253, 250, 0.912);
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid rgba(253, 253, 250, 0.912);
+        }
+
+        th {
+            background-color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Tabella</h1>
+    <div id="table-container"></div>
+    <script>
+            // Controlla se esiste un dato in localStorage
+            let tab = localStorage.getItem("dati");
+            
+                tab = JSON.parse(tab);
+
+                // Creazione tabella
+                let tabella = document.createElement("table");
+
+                // Creazione prima riga tabella con le chiavi e appensione
+                let riga1 = document.createElement("tr");
+                Object.keys(tab).forEach(key => {   
+                    let th = document.createElement("th"); 
+                    th.textContent = key;
+                    riga1.appendChild(th);
+                });
+                tabella.appendChild(riga1);
+
+                // Creazione seconda riga tabella con i valori
+                let riga2 = document.createElement("tr");
+                Object.values(tab).forEach(value => {
+                    let td = document.createElement("td");
+                    td.textContent = value;
+                    riga2.appendChild(td);
+                });
+                tabella.appendChild(riga2);
+
+                // Appendi la tabella al contenitore
+                document.getElementById("table-container").appendChild(tabella);
+    </script>
+    
+</body>
+</html>

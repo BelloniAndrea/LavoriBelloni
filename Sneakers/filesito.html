@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <link rel="stylesheet" href="StyleProgetto.css">
+    </head>
+
+    
+    <script> 
+
+function leggiFile(){
+    let inputFile = document.getElementById("fileJ");
+    let file = inputFile.files[0];
+    let lettoreF = new FileReader();
+    lettoreF.readAsText(file);
+    lettoreF.onload = function () {
+        const sneakers=JSON.parse(lettoreF.result) //parse del risultato della lettura
+        console.log(sneakers)
+        localStorage.setItem("prodotti", JSON.stringify(sneakers));
+        window.location.href= "registrazione.html"
+    }
+        }
+
+    </script>
+    <body> 
+        <h1>Carica File JSON sito web</h1>
+        <input type="file" id="fileJ" onchange="leggiFile(this)"> <br>
+    </body>
+</html>

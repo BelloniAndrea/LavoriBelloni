@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <link rel="stylesheet" href="StyleProgetto.css">
+    </head>
+    <script> 
+    function registrazione() {
+    const nome = document.getElementById("nome").value;
+    const email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let cPassword = document.getElementById("cPassword").value;
+    const indirizzo = document.getElementById("indirizzo").value;
+    if(password === cPassword){
+    let utente={ nome: nome, email: email, password: password , indirizzo: indirizzo };
+    utente = JSON.stringify(utente);
+    localStorage.setItem("utente", JSON.stringify(utente));
+    window.location.href = "accesso.html";
+ }else{
+    alert("le due Password non corrispondono");
+}
+    
+}
+    </script>
+    <body> 
+
+        <h1>Registrati</h1>
+        <input type="text" id="nome" placeholder="Nome Utente">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <input type="cPassword" id="cPassword" placeholder="Conferma Password">
+        <input type="text" id="indirizzo" placeholder="Indirizzo">
+
+        <button onclick="registrazione()">Registrati</button>
+        <p>Hai già un account? <a href="accesso.html">Accedi</a></p>
+    </body>
+</html>

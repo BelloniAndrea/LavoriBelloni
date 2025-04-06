@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html> 
+    <head> 
+        <link rel="stylesheet" href="StyleProgetto.css">
+    </head>
+
+    <script> 
+    function accesso() {
+    const email = document.getElementById("email").value;
+    let password = document.getElementById("password").value;
+    let utente= localStorage.getItem("utente")
+    utente= JSON.parse(utente)
+    if(utente.email !=email || utente.passaword !=password ){
+        
+    }else{
+        alert("utente o password errate")
+    }
+}
+    </script>
+    <body> 
+        <h1>Login</h1>
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button onclick="accesso()">accedi</button>
+        <p>Non hai un account? <a href="registrazione.html">Registrati</a></p>
+    </body>
+</html>

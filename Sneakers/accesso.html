@@ -10,8 +10,11 @@
     let password = document.getElementById("password").value;
     let utente= localStorage.getItem("utente")
     utente= JSON.parse(utente)
+    let sneakers= localStorage.getItem("prodotti")
+    sneaker=JSON.parse(sneakers)
+
     if(utente.email !=email || utente.passaword !=password ){
-        console.log()
+        console.log(sneakers)
     }else{
         alert("utente o password errate")
     }

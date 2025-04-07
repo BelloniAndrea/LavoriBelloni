@@ -1,0 +1,43 @@
+{
+  "Air Force 1": [{
+  "prezzo": 130,
+  "colori":["bianco", "nero"],
+  "taglie": [39, 40, 41, 42, 43, 44, 45]
+
+}],
+    "Asics gel NYC ":[{
+  "prezzo": 130,
+  "colori":["grigio", "nero", "beige"],
+  "taglie": [39, 40, 41, 42, 43, 44, 45]
+ }],
+    "Adidas Yeezy Boost 350 v2 Zebra":[{
+  "prezzo": 420,
+  "colori":["zebra"],
+  "taglie": [36, 40, 41, 42, 43, 44, 45]
+}],
+  "Nike Air Max 90":[{
+  "prezzo": 120,
+  "colori":["bianco", "nero", "grigio", "SE"],
+  "taglie": [36, 40, 41, 42, 43, 44, 45]
+}],
+"Rick Owens":[{
+  "prezzo": 1190,
+  "colori":["classico"],
+  "taglie": [43, 44, 45, 46]
+}],
+"Christian Louboutin":[{
+  "prezzo": 795,
+  "colori":["classico"],
+  "taglie": [40, 41, 42, 43, 44, 45]
+}],
+"Nike Air Max Plus":[{
+  "prezzo": 190,
+  "colori":["nero","bianco","bianco e azzurro", "vulcano","metallo"],
+  "taglie": [40, 41, 42, 43, 44, 45]
+}],
+"Timberland":[{
+    "prezzo":220,
+    "colori":["beige", "marrone", "nero"],
+    "taglie": [39, 40, 41, 42, 43, 44, 45, 46, 47]
+}]
+}

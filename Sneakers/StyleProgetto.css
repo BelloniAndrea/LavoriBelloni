@@ -1,25 +1,39 @@
 /* Reset base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@font-face {
+    font-family: "Bebas";
+    src:url(BebasNeue-Regular.ttf) format("truetype")
+   
+   }
+.accesso {
+    display: flex; /* Usa flexbox per il layout */
+    flex-direction: column; /* Gli elementi sono disposti verticalmente */
+    align-items: center;      /* Centra verticalmente */
+    height: 450px; /* Altezza del contenitore */
+    width: 500px; /* Larghezza del contenitore */
+    background-color: #581d1d;
+    margin-top: 200px; /* Margine superiore */
+    border-radius: 20px; /* Bordo arrotondato */
 }
-
 body {
         font-family: 'Arial', sans-serif;
         background-color: #202020;
         color: #ffffff;
-        line-height: 1.6;
         display: flex;
         justify-content: center;  /* Centra orizzontalmente */
         align-items: center;      /* Centra verticalmente */
         flex-direction: column;   /* Imposta l'orientamento verticale per gli elementi */
 }
+body h1{
+    font-family: 'Bebas';
+    padding: 10px;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
 input{
     padding: 5px;
-    margin-top: 6px;
+    margin-top: 8px;
 }
-/* Header */
+
 header {
     background: linear-gradient(to right, #4d0a0a, #ff6666);
     padding: 20px 0;
@@ -115,25 +129,27 @@ header nav a:hover {
 
 /* Footer */
 footer {
-    background-color: #ff4d4d;
+    background-color: #910a0a;
     color: white;
     padding: 20px;
     text-align: center;
+    
 }
-
+footer h1 {
+font-family: 'Bebas'
+}
 footer p {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 /* Button Styles */
 button {
-    margin-top: 5px;
-    background-color: #c90808;
+    margin-top: 8px;
+    background-color: #910a0a;
     color: white;
     border: none;
     padding: 6px 20px;
     font-size: 16px;
-
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -141,4 +157,17 @@ button {
 button:hover {
     background-color: #800606;
 }
+a {
+    color: #ff0000;  /* Colore arancione */
+}
+a:hover {
+    color: #ff8800;  /* Colore rosso quando si passa sopra */
+    text-decoration: underline;  /* Aggiunge la sottolineatura al passaggio del mouse */
+}
+
+/* Link visitato */
+a:visited {
+    color: #cc007e;  /* Colore viola per i link visitati */
+}
+
 

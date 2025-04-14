@@ -22,6 +22,7 @@ body {
         justify-content: center;  /* Centra orizzontalmente */
         align-items: center;      /* Centra verticalmente */
         flex-direction: column;   /* Imposta l'orientamento verticale per gli elementi */
+    min-height: 100vh;
 }
 body h1{
     font-family: 'Bebas';

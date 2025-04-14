@@ -32,18 +32,19 @@
 "Christian Louboutin":[{
   "prezzo": 795,
   "colori":["classico"],
-  "taglie": [40, 41, 42, 43, 44, 45]
+  "taglie": [40, 41, 42, 43, 44, 45],
+  "image":"https://eu.christianlouboutin.com/media/catalog/product/cache/2687d9ba4029f1eb6acb91746b133704/3/2/3230886h358-3230886h358-main_image-ecommerce-christianlouboutin-astroloubi-3230886_h358_1_1200x1200_202310312257.jpg"
 }],
 "Nike Air Max Plus":[{
   "prezzo": 190,
   "colori":["nero","bianco","bianco e azzurro", "vulcano","metallo"],
   "taglie": [40, 41, 42, 43, 44, 45],
-  "image":
+  "image":"https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/zvggo9fhlalzrv9hc7j1/NIKE+AIR+MAX+PLUS+%28GS%29.png"
 }],
 "Timberland":[{
     "prezzo":220,
     "colori":["beige", "marrone", "nero"],
     "taglie": [39, 40, 41, 42, 43, 44, 45, 46, 47],
-  "image":
+  "image":"https://assets.timberland.eu/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1712584192/TB110061713-HERO/Timberland-Premium-6Inch-LaceUp-Waterproof-Boot-for-Men-in-Yellow.png"
 }]
 }

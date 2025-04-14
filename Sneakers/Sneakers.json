@@ -2,28 +2,32 @@
   "Air Force 1": [{
   "prezzo": 130,
   "colori":["bianco", "nero"],
-  "taglie": [39, 40, 41, 42, 43, 44, 45]
-
+  "taglie": [39, 40, 41, 42, 43, 44, 45],
+  "image": "https://asset.snipes.com/images/f_auto,q_100,d_fallback-sni.png/b_rgb:f8f8f8,c_pad,w_735,h_735/dpr_2.0/01126425_2/nike---air-force-1-'07-wei%C3%9F-1727-2"
 }],
     "Asics gel NYC ":[{
   "prezzo": 130,
   "colori":["grigio", "nero", "beige"],
-  "taglie": [39, 40, 41, 42, 43, 44, 45]
+  "taglie": [39, 40, 41, 42, 43, 44, 45],
+  "image":"https://images.asics.com/is/image/asics/1203A663_101_SR_RT_GLB?$sfcc-product$&fmt=jpg&wid=683&hei=512"  
  }],
     "Adidas Yeezy Boost 350 v2 Zebra":[{
   "prezzo": 420,
   "colori":["zebra"],
-  "taglie": [36, 40, 41, 42, 43, 44, 45]
+  "taglie": [36, 40, 41, 42, 43, 44, 45,
+   "image":"https://www.resellzonecesena.com/cdn/shop/files/adidas-yeezy-boost-350-v2-onyx-hq4540-resellzone.jpg?v=1714497754&width=700"  
 }],
   "Nike Air Max 90":[{
   "prezzo": 120,
   "colori":["bianco", "nero", "grigio", "SE"],
-  "taglie": [36, 40, 41, 42, 43, 44, 45]
+  "taglie": [36, 40, 41, 42, 43, 44, 45],
+    "image":"https://i8.amplience.net/i/jpl/jd_506940_a?v=1"
 }],
 "Rick Owens":[{
   "prezzo": 1190,
   "colori":["classico"],
-  "taglie": [43, 44, 45, 46]
+  "taglie": [43, 44, 45, 46],
+  "image":"https://cdn.rickowens.eu/products/189601/large/RR01E5855_LCO_911_01.jpg?1737035020"
 }],
 "Christian Louboutin":[{
   "prezzo": 795,
@@ -33,11 +37,13 @@
 "Nike Air Max Plus":[{
   "prezzo": 190,
   "colori":["nero","bianco","bianco e azzurro", "vulcano","metallo"],
-  "taglie": [40, 41, 42, 43, 44, 45]
+  "taglie": [40, 41, 42, 43, 44, 45],
+  "image":
 }],
 "Timberland":[{
     "prezzo":220,
     "colori":["beige", "marrone", "nero"],
-    "taglie": [39, 40, 41, 42, 43, 44, 45, 46, 47]
+    "taglie": [39, 40, 41, 42, 43, 44, 45, 46, 47],
+  "image":
 }]
 }

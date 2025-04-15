@@ -4,6 +4,9 @@
     src:url(BebasNeue-Regular.ttf) format("truetype")
    
    }
+   * {
+    box-sizing: border-box;
+  }
 .accesso {
     display: flex; /* Usa flexbox per il layout */
     flex-direction: column; /* Gli elementi sono disposti verticalmente */
@@ -11,17 +14,18 @@
     height: 450px; /* Altezza del contenitore */
     width: 500px; /* Larghezza del contenitore */
     background-color: #581d1d;
-    margin-top: 200px; /* Margine superiore */
     border-radius: 20px; /* Bordo arrotondato */
 }
 body {
-        font-family: 'Arial', sans-serif;
-        background-color: #202020;
-        color: #ffffff;
-        justify-content: center;  /* Centra orizzontalmente */
-        align-items: center;      /* Centra verticalmente */
-        flex-direction: column;   /* Imposta l'orientamento verticale per gli elementi */
+    font-family: 'Arial', sans-serif;
+    background-color: #202020;
+    color: #ffffff;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
 body h1{
     font-family: 'Bebas';
     padding: 10px;
@@ -33,11 +37,16 @@ input{
     margin-top: 8px;
 }
 
+/*header*/
 header {
-    background: linear-gradient(to right, #4d0a0a, #ff6666);
-    padding: 20px 0;
+    background-color: #910a0a;
+    padding: 20px;
     text-align: center;
     display: flex;
+    width: 100%;
+    position: absolute; /*questo parametro e il successivo pongono il footer sempre in fondo alla pagina, l'absolute è per far si che sia sempre in fondo*/
+    top: 0;
+    left: 0;
 }
 
 header h1 {
@@ -50,6 +59,16 @@ header nav {
     margin-top: 10px;
 }
 
+header button{
+    margin-top: 50px;
+    background-color: #f4f4f4;
+    color: #910a0a;
+    padding: 6px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+}
 header nav a {
     color: white;
     text-decoration: none;
@@ -61,50 +80,37 @@ header nav a:hover {
     text-decoration: underline;
 }
 
-/* Banner */
-.banner {
-    background-image: url('https://example.com/your-banner-image.jpg'); /* Inserisci il link della tua immagine */
-    background-size: cover;
-    background-position: center;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
-}
 
-.banner h2 {
-    font-size: 48px;
-    font-weight: bold;
-}
 
-/* Product Grid */
-.product-grid {
+/* Griglia Prodotti */
+.product-griglia {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* meglio per riempire gli spazi */
+    gap: 30px;
     padding: 40px;
+    margin-top: 10%;
 }
-
 .product-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
+    border: 5px solid #910a0a;
+    border-radius: 4px;
     overflow: hidden;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    background-color: white;
+    background-color: #f4f4f4;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%; /* lascia Grid gestire la larghezza */
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .product-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgb(138, 4, 4);
 }
 
 .product-card img {
     width: 100%;
-    height: auto;
+    height: 50%;
     object-fit: cover;
 }
 
@@ -120,23 +126,27 @@ header nav a:hover {
 }
 
 .product-card .price {
-    color: #ff6666;
+    color: #910a0a;
     font-size: 18px;
     font-weight: bold;
     margin: 10px 0;
 }
-
+.contenuto {
+    flex: 1; /* Spinge il footer in basso */
+}
 /* Footer */
 footer {
     background-color: #910a0a;
     color: white;
     padding: 20px;
     text-align: center;
-    
+    width: 100%;
 }
+
 footer h1 {
-font-family: 'Bebas'
+    font-family: 'Bebas', sans-serif;
 }
+
 footer p {
     font-size: 18px;
 }
@@ -144,8 +154,8 @@ footer p {
 /* Button Styles */
 button {
     margin-top: 8px;
-    background-color: #910a0a;
-    color: white;
+    background-color: #f4f4f4;
+    color: #910a0a;
     border: none;
     padding: 6px 20px;
     font-size: 16px;
@@ -154,7 +164,7 @@ button {
 }
 
 button:hover {
-    background-color: #800606;
+    background-color: #ddc6c6;
 }
 a {
     color: #ff0000;  /* Colore arancione */
@@ -168,5 +178,4 @@ a:hover {
 a:visited {
     color: #cc007e;  /* Colore viola per i link visitati */
 }
-
 

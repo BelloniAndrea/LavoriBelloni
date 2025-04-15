@@ -6,18 +6,77 @@
 
     
     <script> 
+    document.addEventListener("DOMContentLoaded", function () {
+        let sneakers= localStorage.getItem("prodotti");
+        sneakers= JSON.parse(sneakers);
+        console.log(sneakers);
+    }
+)
     </script>
     <body> 
         <header>
            <h1>ASASASAS</h1> 
             <button onclick="window.location.href='https://example.com/carrello.html'">Carrello</button>
         </header>
-    </body>
-            <footer>
+        <div class="contenuto">
+        <div class="product-griglia">
+            <div class="product-card">
+            <h3>Nome Prodotto 1</h3>
+            <img src="https://asset.snipes.com/images/f_auto,q_100,d_fallback-sni.png/b_rgb:f8f8f8,c_pad,w_735,h_735/dpr_2.0/01126425_2/nike---air-force-1-'07-wei%C3%9F-1727-2">
+             <p>Descrizione breve del prodotto.</p>
+             <button>Aggiungi al carrello</button>
+            </div>
+
+            <div class="product-card">
+                <h3>Nome Prodotto 1</h3>
+                 <p>Descrizione breve del prodotto.</p>
+                 <button>Aggiungi al carrello</button>
+            </div>
+            <div class="product-card">
+                <h3>Nome Prodotto 1</h3>
+                 <p>Descrizione breve del prodotto.</p>
+                 <button>Aggiungi al carrello</button>
+            </div>
+            <div class="product-card">
+                <h3>Nome Prodotto 1</h3>
+                 <p>Descrizione breve del prodotto.</p>
+                 <button>Aggiungi al carrello</button>
+            </div>
+            <div class="product-card">
+                <h3>Nome Prodotto 1</h3>
+                 <p>Descrizione breve del prodotto.</p>
+                 <button>Aggiungi al carrello</button>
+            </div>
+            <div class="product-card">
+                <h3>Nome Prodotto 1</h3>
+                 <p>Descrizione breve del prodotto.</p>
+                 <button>Aggiungi al carrello</button>
+            </div>
+            <div class="product-card">
+                <h3>Nome Prodotto 1</h3>
+                 <p>Descrizione breve del prodotto.</p>
+                 <button>Aggiungi al carrello</button>
+            </div>
+            <div class="product-card">
+                <h3>Nome Prodotto 1</h3>
+                 <p>Descrizione breve del prodotto.</p>
+                 <button>Aggiungi al carrello</button>
+            </div>
+            <div class="product-card">
+                <h3>Nome Prodotto 1</h3>
+                 <p>Descrizione breve del prodotto.</p>
+                 <button>Aggiungi al carrello</button>
+            </div>
+        </div>
+    </div>
+
+        <footer>
             <h1>Chi Siamo?</h1>
             <p>Benvenuti nella nostra vetrina di sneakers e non solo! Siamo due ragazzi appassionati di sneakers e scarpe in generale, non perderti
                 le nostre offerte sul footwear del momento!
             </p>
         </footer>
+    </body>
+        
 
 </html>

@@ -6,12 +6,30 @@
 
     
     <script> 
-    document.addEventListener("DOMContentLoaded", function () {
-        let sneakers= localStorage.getItem("prodotti");
-        sneakers= JSON.parse(sneakers);
-        console.log(sneakers);
+ document.addEventListener("DOMContentLoaded", function () {
+    let sneakers = localStorage.getItem("sneakers");
+    sneakers = JSON.parse(sneakers);
+    console.log(sneakers);
+
+    //collegamento al div di griglia tramite la sua classe
+    const griglia = document.getElementsByClassName("product-griglia")[0];
+
+    //for each che cicla la lista, in questo caso iProdotto è come se rappresentasse gli indici stessi delle scarpe (prima AF1 poi Asics etc.)
+    for (let iProdotto in sneakers) {
+        const prodotto = sneakers[iProdotto][0];
+
+        const card = document.createElement("div");
+        card.className = "product-card";
+
+        card.innerHTML = 
+            `<h3>${iProdotto}</h3> 
+            <img src="${prodotto.image}">
+            <p>Prezzo: €${prodotto.prezzo}</p>
+            <button>Aggiungi al carrello</button>`;
+            //simbolo del $ utilizzato per inserire una variabile all'interno delle virgolette singole
+        griglia.appendChild(card);
     }
-)
+});
     </script>
     <body> 
         <header>
@@ -20,53 +38,8 @@
         </header>
         <div class="contenuto">
         <div class="product-griglia">
-            <div class="product-card">
-            <h3>Nome Prodotto 1</h3>
-            <img src="https://asset.snipes.com/images/f_auto,q_100,d_fallback-sni.png/b_rgb:f8f8f8,c_pad,w_735,h_735/dpr_2.0/01126425_2/nike---air-force-1-'07-wei%C3%9F-1727-2">
-             <p>Descrizione breve del prodotto.</p>
-             <button>Aggiungi al carrello</button>
-            </div>
-
-            <div class="product-card">
-                <h3>Nome Prodotto 1</h3>
-                 <p>Descrizione breve del prodotto.</p>
-                 <button>Aggiungi al carrello</button>
-            </div>
-            <div class="product-card">
-                <h3>Nome Prodotto 1</h3>
-                 <p>Descrizione breve del prodotto.</p>
-                 <button>Aggiungi al carrello</button>
-            </div>
-            <div class="product-card">
-                <h3>Nome Prodotto 1</h3>
-                 <p>Descrizione breve del prodotto.</p>
-                 <button>Aggiungi al carrello</button>
-            </div>
-            <div class="product-card">
-                <h3>Nome Prodotto 1</h3>
-                 <p>Descrizione breve del prodotto.</p>
-                 <button>Aggiungi al carrello</button>
-            </div>
-            <div class="product-card">
-                <h3>Nome Prodotto 1</h3>
-                 <p>Descrizione breve del prodotto.</p>
-                 <button>Aggiungi al carrello</button>
-            </div>
-            <div class="product-card">
-                <h3>Nome Prodotto 1</h3>
-                 <p>Descrizione breve del prodotto.</p>
-                 <button>Aggiungi al carrello</button>
-            </div>
-            <div class="product-card">
-                <h3>Nome Prodotto 1</h3>
-                 <p>Descrizione breve del prodotto.</p>
-                 <button>Aggiungi al carrello</button>
-            </div>
-            <div class="product-card">
-                <h3>Nome Prodotto 1</h3>
-                 <p>Descrizione breve del prodotto.</p>
-                 <button>Aggiungi al carrello</button>
-            </div>
+            
+                 
         </div>
     </div>
 

@@ -15,14 +15,16 @@ function leggiFile(){
     lettoreF.onload = function () {
         const sneakers=JSON.parse(lettoreF.result) //parse del risultato della lettura
         console.log(sneakers)
-        localStorage.setItem("prodotti", JSON.stringify(sneakers));
+        localStorage.setItem("sneakers", JSON.stringify(sneakers));
         window.location.href= "registrazione.html"
     }
         }
 
     </script>
     <body> 
+        <div class="accesso">
         <h1>Carica File JSON sito web</h1>
         <input type="file" id="fileJ" onchange="leggiFile(this)"> <br>
+        </div>
     </body>
 </html>

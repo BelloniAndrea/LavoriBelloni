@@ -16,25 +16,60 @@
 
     //for each che cicla la lista, in questo caso iProdotto è come se rappresentasse gli indici stessi delle scarpe (prima AF1 poi Asics etc.)
     for (let iProdotto in sneakers) {
-        const prodotto = sneakers[iProdotto][0];
+    const prodotto = sneakers[iProdotto][0];
 
-        const card = document.createElement("div");
-        card.className = "product-card";
+    //creazione carta prodotto e assegnazione class CSS
+    const card = document.createElement("div");
+    card.className = "product-card";
 
-        card.innerHTML = 
-            `<h3>${iProdotto}</h3> 
-            <img src="${prodotto.image}">
-            <p>Prezzo: €${prodotto.prezzo}</p>
-            <button>Aggiungi al carrello</button>`;
-            //simbolo del $ utilizzato per inserire una variabile all'interno delle virgolette singole
-        griglia.appendChild(card);
-    }
-});
-    </script>
+    // Creazione immagine, e link con appensione del link all'immagine
+    const link = document.createElement("a");
+    link.href = ``;
+
+    const img = document.createElement("img");
+    img.src = prodotto.image;
+    link.appendChild(img);
+
+    // Crea titolo, prezzo e bottone
+    const titolo = document.createElement("h3");
+    titolo.textContent = iProdotto;
+
+    const prezzo = document.createElement("p");
+    prezzo.textContent = `Prezzo: €${prodotto.prezzo}`;
+
+    const bottone = document.createElement("button");
+    bottone.textContent = "Aggiungi al carrello";
+
+    // Evento per aggiungere al carrello
+    bottone.addEventListener("click", function () {
+        // Recupera il carrello da localStorage oppure lo inizializza
+        let carrello = JSON.parse(localStorage.getItem("carrello")) || [];
+
+        // Aggiunge il prodotto al carrello
+        carrello.push({
+            nome: iProdotto,
+            prezzo: prodotto.prezzo,
+        });
+
+        // Salva di nuovo nel localStorage
+        localStorage.setItem("carrello", JSON.stringify(carrello));
+
+        console.log(iProdotto);
+    });
+
+    // Composizione finale della card
+    card.appendChild(titolo);
+    card.appendChild(link);
+    card.appendChild(prezzo);
+    card.appendChild(bottone);
+    griglia.appendChild(card);
+}
+ })
+</script>
     <body> 
         <header>
-           <h1>ASASASAS</h1> 
-            <button onclick="window.location.href='https://example.com/carrello.html'">Carrello</button>
+           <h1>SneakPlug</h1> 
+           <a href="window.location.href='https://example.com/carrello.html'"> <img src="carrello.png" width="125px" height="125px"> </a>
         </header>
         <div class="contenuto">
         <div class="product-griglia">

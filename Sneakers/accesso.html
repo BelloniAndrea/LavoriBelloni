@@ -10,24 +10,22 @@
     let password = document.getElementById("password").value;
     let utente= localStorage.getItem("utente")
     utente= JSON.parse(utente)
-    let sneakers= localStorage.getItem("prodotti")
-    sneaker=JSON.parse(sneakers)
-
     if(utente.email !=email || utente.passaword !=password ){
-        console.log(sneakers)
-         window.location.href = "Menù.html";
+        window.location.href = "Menù.html";
     }else{
         alert("utente o password errate")
     }
 }
     </script>
     <body> 
-        <div class="accesso">
+    <div class="accesso">
+        <br>
         <h1>Login</h1>
         <input type="email" id="email" placeholder="Email">
-        <input type="password" id="password" placeholder="Password">
-        <button onclick="accesso()">accedi</button>
+        <input type="password" id="password" placeholder="Password"><br> <br>
+        <button onclick="accesso()">Accedi</button>
         <p>Non hai un account? <a href="registrazione.html">Registrati</a></p>
-        </div>
+        <p> <a href="fileSito.html">selezione JSON</a></p>
+    </div>
     </body>
-</html>
+</html>>

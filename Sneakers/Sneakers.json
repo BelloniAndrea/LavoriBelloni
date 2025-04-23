@@ -14,7 +14,7 @@
     "Adidas Yeezy Boost 350 v2 Zebra":[{
   "prezzo": 420,
   "colori":["zebra"],
-  "taglie": [36, 40, 41, 42, 43, 44, 45,
+  "taglie": [36, 40, 41, 42, 43, 44, 45],
    "image":"https://www.resellzonecesena.com/cdn/shop/files/adidas-yeezy-boost-350-v2-onyx-hq4540-resellzone.jpg?v=1714497754&width=700"  
 }],
   "Nike Air Max 90":[{
@@ -46,5 +46,11 @@
     "colori":["beige", "marrone", "nero"],
     "taglie": [39, 40, 41, 42, 43, 44, 45, 46, 47],
   "image":"https://assets.timberland.eu/images/t_img/f_auto,h_650,w_650,e_sharpen:60/dpr_2.0/v1712584192/TB110061713-HERO/Timberland-Premium-6Inch-LaceUp-Waterproof-Boot-for-Men-in-Yellow.png"
+}],
+"Adidas Gazelle":[{
+    "prezzo":110,
+    "colori":["nero","blu","viola","beige","bianco"],
+    "taglie": [38,39, 40, 41, 42, 43],
+  "image":"https://images.footlocker.com/is/image/FLEU/314312687404_01?wid=581&hei=581&fmt=png-alpha"
 }]
 }

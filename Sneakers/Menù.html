@@ -22,7 +22,7 @@
     const card = document.createElement("div");
     card.className = "product-card";
 
-    // Creazione immagine, e link con appensione del link all'immagine
+    // Creazione immagine, e link con appensione del link all'immagine, il link inesistente viene utilizzato per questioni di formattazione
     const link = document.createElement("a");
     link.href = ``;
 
@@ -38,23 +38,13 @@
     prezzo.textContent = `Prezzo: €${prodotto.prezzo}`;
 
     const bottone = document.createElement("button");
-    bottone.textContent = "Aggiungi al carrello";
+    bottone.textContent = "Vai al prodotto";
 
-    // Evento per aggiungere al carrello
+    // addEventListener tiene il bottone in ascolto di un click e fa la funzione all'interno del listener
     bottone.addEventListener("click", function () {
-        // Recupera il carrello da localStorage oppure lo inizializza
-        let carrello = JSON.parse(localStorage.getItem("carrello")) || [];
-
-        // Aggiunge il prodotto al carrello
-        carrello.push({
-            nome: iProdotto,
-            prezzo: prodotto.prezzo,
-        });
-
-        // Salva di nuovo nel localStorage
-        localStorage.setItem("carrello", JSON.stringify(carrello));
-
-        console.log(iProdotto);
+        let prodotto= titolo.textContent; //ottieni nome prodotto scelto
+        localStorage.setItem("prodotto", prodotto);
+        window.location.href= "prodotto.html"
     });
 
     // Composizione finale della card

@@ -46,7 +46,7 @@ header {
     text-align: center;
     display: flex;
     width: 100%;
-    position: absolute; /*questo parametro e il successivo pongono il footer sempre in fondo alla pagina, l'absolute è per far si che sia sempre in fondo*/
+    position: absolute; 
     top: 0;
     left: 0;
 }
@@ -83,9 +83,69 @@ header nav a:hover {
     text-decoration: underline;
 }
 
+.speci-prod{
+    margin-left: 20%;
+    margin-right: 20%;
+    align-items: center;
+    background-color: #f4f4f4;
+    border: 5px solid #910a0a;
+}
+.speci-prod h3 {
+    color: #910a0a;
+    font-size: 50px;
+    font-weight: bold;
+    margin-left: 5%;
+    margin-top: 0%;
+    font-family: "bebas";
+}
+.speci-prod img {
+    width: 100%;
+    max-height: 1400px;     
+    object-fit: cover;    /* riempie l’area mantenendo il contenuto proporzionato */
+    display: block;
+    margin: 0 auto 10px;  /* centra l’immagine e aggiunge margine sotto */
+    margin-top: 5%;
+}
+.speci-prod p {
+    color: #333;
+    font-size: 35px;
+    font-weight: bold;
+    font-family: "bebas";
+    margin-left: 5%;
+}
+.speci-prod select {
+    width: 90%;
+    margin: 10px auto;
+    display: block;
+    padding: 10px;
+    font-size: 20px;
+    font-family: "bebas", sans-serif;
+    color: #333;
+    background-color: #fff;
+    border: 3px solid #910a0a;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
 
+.speci-prod select:focus {
+    border-color: #c21414;
+    box-shadow: 0 0 5px rgba(145, 10, 10, 0.5);
+}
+.speci-prod button{
+    font-family: "bebas";
+    font-weight: bold;
+    margin-top: auto; /* spinge il bottone in basso */
+    margin-left: 5%;
+    font-size: 30px;
+    color: #910a0a;
+    border: none;
+    padding: 6px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-/* Griglia Prodotti */
+/* Griglia Prodotti e card prodotto */
 .product-griglia {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); /* meglio per riempire gli spazi */
@@ -99,7 +159,7 @@ header nav a:hover {
 .product-card {
     border: 5px solid #910a0a;
     border-radius: 4px;
-    overflow: hidden;
+    overflow: hidden; /*se il contenuto è troppo lo taglia*/
     background-color: #f4f4f4;
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -143,7 +203,6 @@ header nav a:hover {
     color: #910a0a;
     border: none;
     padding: 6px 20px;
-    font-size: 16px;
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
@@ -154,10 +213,11 @@ header nav a:hover {
     font-weight: bold;
     margin: 10px 0;
 }
+
+/* Footer */
 .contenuto {
     flex: 1; /* Spinge il footer in basso */
 }
-/* Footer */
 footer {
     background-color: #910a0a;
     color: white;
@@ -201,4 +261,5 @@ a:hover {
 a:visited {
     color: #fc6500;  /* Colore viola per i link visitati */
 }
+
 

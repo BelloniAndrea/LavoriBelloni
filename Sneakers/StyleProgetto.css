@@ -57,31 +57,24 @@ header h1 {
     font-weight: bold;
 }
 
-header nav {
-    margin-top: 10px;
-}
-
 header button{
-    margin-top: 50px;
+    margin-left: 2%;
+    margin-top: 2.5%;
+    height: fit-content;
     background-color: #f4f4f4;
     color: #910a0a;
     padding: 6px 20px;
-    font-size: 16px;
+    font-family: "Bebas";
+    font-size: 150%;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 10%;
 }
-header nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 18px;
-}
+
 header a{
-    margin-left: 80%;
+    margin-left: 70%;
 }
-header nav a:hover {
-    text-decoration: underline;
-}
+
 
 .speci-prod{
     margin-left: 20%;
@@ -261,5 +254,7 @@ a:hover {
 a:visited {
     color: #fc6500;  /* Colore viola per i link visitati */
 }
+
+
 
 

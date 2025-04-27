@@ -48,18 +48,19 @@
 
             //listener carrello
             bottone.addEventListener("click", function () {
-                let carrello = JSON.parse(localStorage.getItem("carrello")) || [];
+                let carrello = JSON.parse(localStorage.getItem("carrello")) || []; //ottieni il carrello dal localStorage o in caso non ci sia lo dichiari
                 carrello.push({
                 nome: iProdotto,
                 prezzo: prodotto.prezzo,
                 taglia: taglie.value,
                 colore: colori.value
-    });
+                });
 
 
                 // Salva di nuovo nel localStorage
                 localStorage.setItem("carrello", JSON.stringify(carrello));
                 alert("Prodotto aggiunto al carrello!");
+                console.log(carrello);
             })
 
             //appensione
@@ -73,26 +74,15 @@
     }
     document.getElementsByClassName("contenuto")[0].appendChild(div); //senza [0] non funziona perchè getElementByClassName prende gli elementi 
 })
+function vaiMenù(){
+    window.location.href="Menù.html"
+}
 
-
-    /*function carrello(){
-    let carrello = JSON.parse(localStorage.getItem("carrello")) || [];
-    // Aggiunge il prodotto al carrello
-    carrello.push({
-        nome: iProdotto,
-        prezzo: prodotto.prezzo,
-    });
-
-
-// Salva di nuovo nel localStorage
-localStorage.setItem("carrello", JSON.stringify(carrello));
-
-console.log(iProdotto);
-}*/
     </script>
     <body> 
         <header>
            <h1>SneakPlug</h1> 
+           <button onclick="vaiMenù()">Torna Indietro </button>
            <a href="window.location.href='https://example.com/carrello.html'"> <img src="carrello.png" width="125px" height="125px"> </a>
         </header>
         <div class="contenuto">

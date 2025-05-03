@@ -1,95 +1,94 @@
 <!DOCTYPE html>
+<html lang="it">
 <head>
-  
-  <title>Carrello - ScarpeShop</title>
   <link rel="stylesheet" href="StyleProgetto.css">
-  <style>
+</head>
 
-  </style>
-    </head>
-     <script>
-  // Funzione per leggere il carrello dal localStorage
-  function caricaCarrello() {
-    const dati = localStorage.getItem("carrello");
-    return dati ? JSON.parse(dati) : [];
-  }
+<body>
+  <header>
+    <h1>SneakPlug</h1>
+    <button onclick="vaiMenu()">Torna Indietro</button>
+  </header>
 
-  // Funzione per salvare il carrello nel localStorage
-  function salvaCarrello() {
-    localStorage.setItem("carrello", JSON.stringify(carrello));
-  }
+  <div class="contenuto">
+    <table id="carrello">
+      <thead>
+        <tr>
+          <th>Scarpa</th>
+          <th>Colore</th>
+          <th>Taglia</th>
+          <th>Prezzo</th>
+          <th>Rimuovi</th>
+        </tr>
+      </thead>
+      <tbody id="corpo-tabella">
+        <!-- Le righe del carrello saranno aggiunte qui -->
+      </tbody>
+    </table>
 
-  // Carica il carrello al caricamento
-  let carrello = caricaCarrello();
-
-  function aggiornaCarrello() {
-    const tbody = document.querySelector("#carrello tbody");
-    tbody.innerHTML = ""; // Svuota la tabella
-
-    let totale = 0;
-
-    carrello.forEach((item, index) => {
-      const riga = document.createElement("tr");
-  
-      totale += Item.prezzo;
-
-      riga.innerHTML = `
-        <td>${item.nome}</td>
-        <td>${item.taglia}</td>
-        <td>${item.taglia}</td>
-        <td>€${item.prezzo.toFixed(2)}</td> 
-        <td>€${totaleItem.toFixed(2)}</td>
-        <td><button onclick="rimuoviDalCarrello(${index})">X</button></td>`; //arrotonda 2 cifre decimali
-
-      tbody.appendChild(riga);
-    });
-
-    document.getElementById("totaleCarrello").textContent = "Totale: €" + totale.toFixed(2);
-  }
-
-  function rimuoviDalCarrello(indice) {
-    carrello.splice(indice, 1);
-    salvaCarrello();
-    aggiornaCarrello();
-  }
-
-  // Avvia tutto
-  aggiornaCarrello();
-  
-  function vaiMenù(){
-    window.location.href="Menù.html"
-}
-  </script>
-
-    <body>
-        <header>
-            <h1>SneakPlug</h1>
-             <button onclick="vaiMenù()">Torna Indietro </button>
-        </header>
-
-  <div class="contenuto">         
-  <table id="carrello">
-    <!-- gli elementi t(elemento html) si riferiscono alla parte della tabella, body tabella etc. -->
-    <thead>
-      <tr>
-        <th>Scarpa</th>
-        <th>Quantità</th>
-        <th>Prezzo</th>
-        <th>Totale</th>
-        <th>Rimuovi</th>
-      </tr>
-    </thead>
-    <tbody>
-      
-    </tbody>
-  </table>
-
-  <div class="total" id="totaleCarrello">Totale: €0.00</div>
-
- 
+    <div class="total" id="totaleCarrello">Totale: €0.00</div>
   </div>
-<footer>
-  <p> Grazie per comprare da noi!   </p>
-</footer>
+</div>
+
+  <footer>
+    <p>Grazie per comprare da noi!</p>
+  </footer>
+
+  <script>
+    // Funzione per leggere il carrello dal localStorage
+    function caricaCarrello() {
+      let dati = localStorage.getItem("carrello");
+      return dati ? JSON.parse(dati) : [];
+    }
+
+    // Funzione per salvare il carrello nel localStorage
+    function salvaCarrello() {
+      localStorage.setItem("carrello", JSON.stringify(carrello));
+    }
+
+    // Caricamento iniziale
+    let carrello = caricaCarrello();
+
+    // Funzione per aggiornare la tabella del carrello
+    function aggiornaCarrello() {
+      const tbody = document.getElementById("corpo-tabella");
+      tbody.innerHTML = "";
+
+      let totale = 0;
+
+      carrello.forEach((item, index) => {
+        const riga = document.createElement("tr");
+        const totaleItem = item.prezzo; 
+        totale += totaleItem;
+
+        riga.innerHTML = `
+          <td>${item.nome}</td>
+          <td>${item.colore}</td>
+          <td>${item.taglia}</td>
+          <td>€${item.prezzo.toFixed(2)}</td>
+          <td><button onclick="rimuoviDalCarrello(${index})">X</button></td>
+        `;
+
+        tbody.appendChild(riga);
+      });
+
+      document.getElementById("totaleCarrello").textContent = "Totale: €" + totale.toFixed(2);
+    }
+
+    // Rimuove un elemento dal carrello
+    function rimuoviDalCarrello(indice) {
+      carrello.splice(indice, 1); // Rimuove 1 elemento all'indice indicato
+      salvaCarrello();
+      aggiornaCarrello();
+    }
+
+    // Funzione per tornare alla pagina del menù
+    function vaiMenu() {
+      window.location.href = "Menù.html";
+    }
+
+    // Avvia il caricamento al load
+    aggiornaCarrello();
+  </script>
 </body>
 </html>

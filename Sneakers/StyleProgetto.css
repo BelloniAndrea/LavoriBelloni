@@ -254,6 +254,63 @@ a:hover {
 a:visited {
     color: #fc6500;  /* Colore viola per i link visitati */
 }
+#carrello {
+    width: 80%;
+    margin-top: 11%;
+    margin-left:  auto;
+    margin-right: auto;
+    border-collapse: collapse;
+    background-color: #f4f4f4;
+    border: 5px solid #910a0a;
+    font-family: "bebas", sans-serif;
+    font-size: 20px;
+    color: #333;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  #carrello thead {
+    background-color: #910a0a;
+    color: white;
+    font-size: 24px;
+  }
+  
+  #carrello th,
+  #carrello td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+  }
+  
+  #carrello tbody tr:hover {
+    background-color: #ffe5e5;
+  }
+  
+  #carrello button {
+    background-color: #910a0a;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "bebas";
+    font-size: 18px;
+  }
+  
+  #carrello button:hover {
+    background-color: #c21414;
+  }
+  
+  .total {
+    text-align: right;
+    font-family: "bebas";
+    font-size: 28px;
+    margin: 20px auto;
+    width: 80%;
+    color: #910a0a;
+  }
+  
+
 
 
 

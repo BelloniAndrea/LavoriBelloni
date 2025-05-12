@@ -61,7 +61,7 @@
       let yPosition = 80;
       for (let i = 0; i < carrelloItems.length; i++) {
         const item = carrelloItems[i];
-        doc.text(`${item.nome} - ${item.colore} - Taglia ${item.taglia} - €${item.prezzo.toFixed(2)}`, 20, yPosition);
+        doc.text(`${item.nome} - €${item.prezzo.toFixed(2)}`, 20, yPosition);
         yPosition += 10;
       }
 

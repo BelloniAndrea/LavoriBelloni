@@ -29,7 +29,7 @@
     // Importa jsPDF
     const { jsPDF } = window.jspdf;
 
-    // Gestore dell'evento submit, l'oggetto e è l'evento stesso
+    // Gestore dell'evento submit, l'oggetto "e" è l'evento stesso. il submit è necessario per far si che venga generato il pdf quando vengono inviati i dati dai form
     document.getElementById("formPagamento").addEventListener("submit", function(e) {
       // Qui non usiamo preventDefault, quindi il modulo verrà inviato come di consueto.
 

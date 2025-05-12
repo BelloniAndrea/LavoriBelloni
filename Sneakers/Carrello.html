@@ -28,6 +28,7 @@
 
     <div class="total" id="totaleCarrello">Totale: €0.00</div>
   </div>
+  <button onclick="vaiPagamento()" class="paga-btn">Procedi al Pagamento</button>
 </div>
 
   <footer>
@@ -86,6 +87,9 @@
     function vaiMenu() {
       window.location.href = "Menù.html";
     }
+    function vaiPagamento() {
+  window.location.href = "Pagamento.html";
+}
 
     // Avvia il caricamento al load
     aggiornaCarrello();

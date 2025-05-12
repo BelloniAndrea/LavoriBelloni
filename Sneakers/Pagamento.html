@@ -29,19 +29,21 @@
     // Importa jsPDF
     const { jsPDF } = window.jspdf;
 
+    // Gestore dell'evento submit, l'oggetto e è l'evento stesso
     document.getElementById("formPagamento").addEventListener("submit", function(e) {
-      e.preventDefault();
+      // Qui non usiamo preventDefault, quindi il modulo verrà inviato come di consueto.
 
+      // prendi dati dai form i 
       const nome = document.getElementById("nomeCarta").value;
       const numero = document.getElementById("numeroCarta").value;
       const scadenza = document.getElementById("scadenza").value;
       const cvv = document.getElementById("cvv").value;
 
-      // Recupera i dati del carrello da localStorage
+      // Recupera i dati del carrello dal localStorage
       const carrello = localStorage.getItem("carrello");
       const carrelloItems = carrello ? JSON.parse(carrello) : [];
 
-      // Calcolo totale
+      // Calcola il totale 
       let totale = 0;
       for (let i = 0; i < carrelloItems.length; i++) {
         totale += carrelloItems[i].prezzo;
@@ -56,11 +58,12 @@
       doc.text(`Numero carta: **** **** **** ${numero.slice(-4)}`, 20, 50);
       doc.text(`Totale pagato: €${totale.toFixed(2)}`, 20, 60);
 
-      // Aggiungi gli articoli del carrello
+      // Aggiungi i dettagli degli articoli del carrello (senza taglia e colore nel PDF)
       doc.text("Dettagli acquisto:", 20, 70);
       let yPosition = 80;
       for (let i = 0; i < carrelloItems.length; i++) {
         const item = carrelloItems[i];
+        // Rimuoviamo "colore" e "taglia" dal PDF, lasciando solo "nome" e "prezzo"
         doc.text(`${item.nome} - €${item.prezzo.toFixed(2)}`, 20, yPosition);
         yPosition += 10;
       }
@@ -74,9 +77,7 @@
       // Pulisce il carrello dopo il pagamento
       localStorage.removeItem("carrello");
 
-      // Redirect o conferma
-      alert("Pagamento effettuato con successo!");
-      window.location.href = "Menù.html";
+      // Quando l'utente invia il modulo, dopo aver scaricato il PDF, la pagina verrà effettivamente inviata al server (se configurata) o ricaricata.
     });
   </script>
 </body>

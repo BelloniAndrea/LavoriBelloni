@@ -50,7 +50,7 @@
         totale += carrelloItems[i].prezzo;
       }
 
-      // Crea PDF della ricevuta
+      // Crea PDF della ricevuta i due numeri sono le posizione x e y nel foglio
       const doc = new jsPDF();
       doc.setFontSize(16);
       doc.text("Ricevuta di Pagamento", 20, 20);

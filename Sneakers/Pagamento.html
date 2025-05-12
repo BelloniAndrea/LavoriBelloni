@@ -7,7 +7,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 </head>
 <body>
-  <div class="accesso">
   <h1>Pagamento</h1>
 
   <form id="formPagamento">
@@ -25,7 +24,7 @@
 
     <button type="submit">Paga Ora</button>
   </form>
-  </div>
+
   <script>
     // Importa jsPDF
     const { jsPDF } = window.jspdf;
@@ -38,10 +37,15 @@
       const scadenza = document.getElementById("scadenza").value;
       const cvv = document.getElementById("cvv").value;
 
-      // Dati simulati del carrello (puoi anche recuperarli da localStorage se necessario)
-      const totale = localStorage.getItem("carrello") 
-        ? JSON.parse(localStorage.getItem("carrello")).reduce((acc, item) => acc + item.prezzo, 0) 
-        : 0;
+      // Recupera i dati del carrello da localStorage
+      const carrello = localStorage.getItem("carrello");
+      const carrelloItems = carrello ? JSON.parse(carrello) : [];
+
+      // Calcolo totale
+      let totale = 0;
+      for (let i = 0; i < carrelloItems.length; i++) {
+        totale += carrelloItems[i].prezzo;
+      }
 
       // Crea PDF della ricevuta
       const doc = new jsPDF();
@@ -51,7 +55,18 @@
       doc.text(`Nome sulla carta: ${nome}`, 20, 40);
       doc.text(`Numero carta: **** **** **** ${numero.slice(-4)}`, 20, 50);
       doc.text(`Totale pagato: €${totale.toFixed(2)}`, 20, 60);
-      doc.text(`Grazie per il tuo acquisto!`, 20, 80);
+
+      // Aggiungi gli articoli del carrello
+      doc.text("Dettagli acquisto:", 20, 70);
+      let yPosition = 80;
+      for (let i = 0; i < carrelloItems.length; i++) {
+        const item = carrelloItems[i];
+        doc.text(`${item.nome} - ${item.colore} - Taglia ${item.taglia} - €${item.prezzo.toFixed(2)}`, 20, yPosition);
+        yPosition += 10;
+      }
+
+      // Stampa il totale
+      doc.text(`Totale: €${totale.toFixed(2)}`, 20, yPosition + 10);
 
       // Scarica il PDF
       doc.save("ricevuta_pagamento.pdf");

@@ -1,0 +1,82 @@
+:root {
+      --primary-color: #1f2937;
+      --accent-color: #3b82f6;
+      --bg-gradient-start: #f0f4ff;
+      --bg-gradient-end: #dbeafe;
+      --card-bg: #ffffff;
+      --text-color: #374151;
+      --shadow: rgba(0, 0, 0, 0.1);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    body {
+      min-height: 100vh;
+      background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+      color: var(--text-color);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+    }
+    .card {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px var(--shadow);
+      max-width: 600px;
+      width: 100%;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .header {
+      background-color: #ff000f;
+      color: #fff;
+      padding: 1.5rem;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2rem;
+      font-weight: 800;
+    }
+    .header p {
+      margin-top: 0.5rem; /* font scalabile (rem è l'unità di misura equivale al font radice)*/ 
+      font-weight: 400;
+    }
+    .content {
+      padding: 1.5rem;
+    }
+    .spec-list {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* valore frazionato, fa 2 colonne*/
+      gap: 0.75rem 1.5rem;
+    }
+    .spec-item {
+      background: #f9fafb;
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      box-shadow: 0 4px 10px var(--shadow);
+      text-align: center;
+    }
+    .spec-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--primary-color);
+    }
+    .spec-item span {
+      display: block;
+      margin-top: 0.25rem;
+      font-size: 0.875rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }

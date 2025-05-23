@@ -8,19 +8,16 @@
       --shadow: rgba(0, 0, 0, 0.1);
     }
     * {
-      margin: 0;
       padding: 0;
-      box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
     body {
       min-height: 100vh;
       background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
       color: var(--text-color);
-      display: flex;
       align-items: center;
       justify-content: center;
-      padding: 2rem;
+      
     }
     .card {
       background: var(--card-bg);
@@ -29,11 +26,9 @@
       max-width: 600px;
       width: 100%;
       overflow: hidden;
-      transition: transform 0.3s ease;
+      margin:0 auto 
     }
-    .card:hover {
-      transform: translateY(-5px);
-    }
+  
     .header {
       background-color: #ff000f;
       color: #fff;
@@ -80,3 +75,61 @@
       font-size: 0.75rem;
       color: #6b7280;
     }
+
+    .cardCompon {
+      background: var(--card-bg);
+      border-radius: 1rem;
+      box-shadow: 0 10px 20px var(--shadow);
+      max-width: 1100px;
+      width: 100%;
+      overflow: hidden;
+      margin:0 auto 
+    }
+    .cardCompon p{
+      align-items: center;
+      justify-content: center;
+      margin-left :18%;
+    }
+     .progress-bar {
+      width: 25%; /* qui imposti la percentuale */
+      height: 30px;
+      background-color: #ff9900;
+      text-align: center;
+      color: white;
+      line-height: 30px; /* per centrare il testo verticalmente */
+      font-weight: bold;
+      transition: width 0.5s ease;
+    }
+    .progress-bar2 {
+      width: 40%; /* qui imposti la percentuale */
+      height: 30px;
+      background-color: #039603;
+      text-align: center;
+      color: white;
+      line-height: 30px; /* per centrare il testo verticalmente */
+      font-weight: bold;
+    }
+    .progress-bar3 {
+      width: 10%; /* qui imposti la percentuale */
+      height: 30px;
+      background-color: #27d2df;
+      text-align: center;
+      color: white;
+      line-height: 30px; /* per centrare il testo verticalmente */
+      font-weight: bold;
+      
+    }
+    .progress-container {
+      width: 100%;
+      background-color: #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+      .spec-list2 {
+      list-style: none;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr; /* valore frazionato, fa 2 colonne*/
+      gap: 0.75rem 1.5rem;
+    }
+
+   

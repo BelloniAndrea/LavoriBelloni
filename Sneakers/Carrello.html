@@ -39,7 +39,7 @@
     // Funzione per leggere il carrello dal localStorage
     function caricaCarrello() {
       let dati = localStorage.getItem("carrello");
-      return dati ? JSON.parse(dati) : [];
+      return dati ? JSON.parse(dati) : []; //struttura if else, se dati esiste lo returna altrimenti lo dichiara
     }
 
     // Funzione per salvare il carrello nel localStorage

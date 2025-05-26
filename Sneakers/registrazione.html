@@ -10,7 +10,7 @@
     let password = document.getElementById("password").value;
     let cPassword = document.getElementById("cPassword").value;
     const indirizzo = document.getElementById("indirizzo").value;
-    if(password === cPassword){
+    if(password == cPassword){
     let utente={ nome: nome, email: email, password: password , indirizzo: indirizzo };
     utente = JSON.stringify(utente);
     localStorage.setItem("utente", JSON.stringify(utente));

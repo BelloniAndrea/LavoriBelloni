@@ -2,12 +2,22 @@
 <html>
 <head>
     <script>
-
+        function lettura(){
+            const richiesta = new XMLHttpRequest();
+            richiesta.open("GET", 'ListaNera.json', true); //apertura richiesta per ottenere JSON
+            richiesta.send(); 
+            richiesta.onload=function(){
+                const parseJSOn= JSON.parse(richiesta.responseText);
+                document.getElementById("output").innerHTML=JSON.stringify(json);
+            }
+        }
     </script>
 </head>
 
+
 <body>
-    
+   <p id="output"> </p>
+   <input type="button" value="schiaccia" onclick="lettura()">
 </body>
 
 </html>

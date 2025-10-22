@@ -1,3 +1,11 @@
+[
+  {
+  "nome": "Marco",
+  "cognome":"Rossi",
+  "citta": "Anzio",
+  "indirizzo": "Via Garibaldi 5",
+  "cap": "00042",
+  "età": 7
 },
 {
   "nome": "Giovanni",

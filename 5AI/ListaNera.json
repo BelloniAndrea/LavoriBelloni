@@ -1,11 +1,3 @@
-[
-  {
-  "nome": "Marco",
-  "cognome":"Rossi",
-  "citta": "Anzio",
-  "indirizzo": "Via Garibaldi 5",
-  "cap": "00042",
-  "età": 7
 },
 {
   "nome": "Giovanni",
@@ -13,7 +5,7 @@
   "citta": "Treviglio",
   "indirizzo": "Via Matteotti 2",
   "cap": "24047",
-  "eta": 26
+  "età": 26
   },
   {
   "nome": "Alberto",
@@ -21,7 +13,7 @@
   "citta": "Sassuolo",
   "indirizzo": "Via Battisti 69",
   "cap": "41049",
-  "eta": 96
+  "età": 96
   },
   {
   "nome": "Federica",
@@ -29,7 +21,7 @@
   "citta": "Ladispoli",
   "indirizzo": "Via San Vittore 1",
   "cap": "00055",
-  "eta": 17
+  "età": 17
   },
   {
   "nome": "Mattia",
@@ -37,7 +29,7 @@
   "citta": "Ancona",
   "indirizzo": "Via XV Settembre 15",
   "cap": "60100",
-  "eta": 29
+  "età": 29
   },
   {
   "nome": "Alessandro",
@@ -45,6 +37,6 @@
   "citta": "Iglesias",
   "indirizzo": "Via Mori 3",
   "cap": "09016",
-  "eta": 25
+  "età": 25
   }
 ]

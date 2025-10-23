@@ -9,9 +9,15 @@ body {
   padding: 20px;
 }
 
-body p, h1, h2 {
+body, h1, h2 {
   padding: 10px;
   font-size: 32px;
+  color: #065f46; 
+  text-align: center;
+}
+p{
+  padding: 10px;
+  font-size: 20px;
   color: #065f46; 
   text-align: center;
 }

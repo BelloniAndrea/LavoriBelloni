@@ -19,24 +19,6 @@
     </vittima>
 
     <vittima genere="M">
-        <nome>Maria</nome>
-        <Cognome>Rossi</Cognome>
-        <citta>Monte Carlo</citta>
-        <indirizzo>Corso Italia 45</indirizzo>
-        <eta>71</eta>
-        <GSanguigno>0-</GSanguigno>
-    </vittima>
-
-    <vittima genere="M">
-        <nome>Maria</nome>
-        <Cognome>Rossi</Cognome>
-        <citta>Monte Carlo</citta>
-        <indirizzo>Piazza Duomo 3</indirizzo>
-        <eta>71</eta>
-        <GSanguigno>0-</GSanguigno>
-    </vittima>
-
-    <vittima genere="M">
         <nome>Michael</nome>
         <Cognome>Dest</Cognome>
         <citta>Canegrate</citta>

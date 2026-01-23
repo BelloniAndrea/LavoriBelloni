@@ -1,5 +1,21 @@
 <definitions name="servizio" >
+      xmlns = "http://schemas.xmlsoap.org/wsdl/"
+      xmlns:soap = "http://schemas.xmlsoap.org/wsdl/soap/"
+      xmlns:tns = ""
+      xmlns:xsd = "http://www.w3.org/2001/XMLSchema">
   <message name="richiesta">
-    <part name=""
+    <part name="lunghezza" type= "xsd:string"/>
+    <part name="scala" type= "xsd:string"/>
   </message>
+
+  <message name="risposta">
+    <part name = "greeting" type = "xsd:string"/>
+  </message>
+
+  <portType name = "Hello_PortType">
+          <operation name = "conversione">
+              <input message = "tns:richiesta"/>
+              <output message = "tns:risposta"/>
+          </operation>
+      </portType>
 </definitions>

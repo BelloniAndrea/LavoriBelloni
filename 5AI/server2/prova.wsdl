@@ -1,0 +1,5 @@
+<definitions name="servizio" >
+  <message name="richiesta">
+    <part name=""
+  </message>
+</definitions>

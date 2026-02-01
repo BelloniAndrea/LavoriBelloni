@@ -5,16 +5,18 @@
     </head>
     <body>
         <h1>Convertitore Metri-Piedi Piedi-Metri</h1>
-        <input type="number" name="lunghezza" min="1">
+        
 
         <form method="POST" action="">
+            <input type="number" name="lunghezza" min="1">
             <select name="scala">
                 <option value="cmetri">Centimetri</option>
                 <option value='pollici'>Pollici</option>
             </select>
-        </form>
+        
 
         <button type="submit">Converti</button>
+        </form>
     </body>
 
 
@@ -26,9 +28,9 @@
         $lunghezza=$_POST['lunghezza'];
         $scala=$_POST['scala'];
 
-        $client = new SoapClient($wsdl_url,["location" =>"http://127.0.0.1/soap2/server/"]); // creazione client soap e indicazione di dove sia il server
+        $client = new SoapClient($wsdl_url,["location" =>"http://127.0.0.1/soap/server2/server2.php"]); // creazione client soap e indicazione di dove sia il server
 
-        $risposta = $client->conversione($lunghezza,$scala); //chiama il metodo soap conversione e il server restituirà il valore salvandolo in risposta
+        $risposta = $client->conversione($lunghezza, $scala); //chiama il metodo soap conversione e il server restituirà il valore salvandolo in risposta 
 
         echo "<div class='jumbotron'><h1>La conversione  è ".$risposta."</h1><br></div>"; //output di risposta
          } catch (SoapFault $e){  
@@ -40,8 +42,4 @@
         }
     }
 ?>
-</html>
-    
-?>
-
 </html>

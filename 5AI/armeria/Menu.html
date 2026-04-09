@@ -1,0 +1,86 @@
+<link rel='stylesheet' href="stile.css">
+<html>
+    <head>
+        <script>
+            
+           document.addEventListener("DOMContentLoaded", function() {
+            let recensioni = [
+                { recensione: "Servizio eccellente!", stelle: 5 },
+                { recensione: "Buona qualità ma tempi lunghi.", stelle: 3 },
+                { recensione: "Personale molto competente.", stelle: 4 },
+                { recensione: "Esperienza discreta.", stelle: 2 },
+                { recensione: "Perfetto sotto ogni aspetto!", stelle: 5 },
+                { recensione: "Non sono rimasto soddisfatto.", stelle: 1 }
+                ];
+            //funzione generazione stelle
+            function generaStelle(voto) {
+                let stelle ="" //tieni il "" se no inizia con "undefined"
+                for (let i = 0; i <voto; i++) {
+                    stelle += "☆";
+                }
+                return stelle;
+                }
+
+            let random = Math.floor(Math.random() * recensioni.length);
+            let Rec_scelta = recensioni[random];
+
+            document.getElementById("recensione").innerHTML = generaStelle(Rec_scelta.stelle) + " " + Rec_scelta.recensione;
+            });
+        </script>
+    </head>
+    <body>
+        
+        <div class="logo">ARMERIA</div> <br> <br>
+        
+        <h1>INSERISCI CLIENTI</h1>
+        <form action="inserisci_cliente.php" method="POST">
+
+        <select id="tipo" name="tipo" required>
+                <option value="Privato">Privato</option>
+                <option value="Azienda">Azienda</option>
+        </select>
+
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="cognome">Cognome:</label>
+        <input type="text" id="cognome" name="cognome" required>
+
+        <label for="porto">Porto:</label>
+        <input type="text" id="porto" name="porto" required>
+
+        <label for="residenza">Residenza:</label>
+        <input type="text" id="residenza" name="residenza" required>
+
+        <label for="telefono">Telefono:</label>
+        <input type="text" id="telefono" name="telefono" required>
+
+        <label for="ragione_sociale">Ragione sociale:</label>
+        <input type="text" id="ragione_sociale" name="ragione_sociale">
+
+        <label for="P_iva">Partita IVA:</label>
+        <input type="text" id="P_iva" name="P_iva">
+        <br>
+        <input type="submit" value="inserisci">
+        </form>
+
+        <br> <br>
+        <h1>VISUALIZZA ELENCO ARMI</h1>
+        <form action="ottieni_armi.php" method="GET">
+            <input type="submit" value="Mostra Armi">
+        </form>
+
+        <br><br>
+        <h1>VISUALIZZA ORDINI NON ANCORA CONSEGNATI</h1>
+        <form action="ordini_non.php" method="GET">
+            <input type="submit" value="Mostra ordini">
+        </form>
+
+
+        <div class="contenuto"></div></div>
+        <div class="footer">
+            <div id="recensione"></div><br>
+            © 2026 Armeria 
+        </div>
+    </body>
+</html>

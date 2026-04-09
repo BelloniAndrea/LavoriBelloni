@@ -1,0 +1,110 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* spinge il footer in basso */
+  min-height: 100vh; /* altezza minima viewport */
+  align-items: center;
+  background-color: #1F2937;
+  font-family: Arial;
+  margin: 0;
+  padding: 20px;
+}
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #C9A227;
+  letter-spacing: 2px;
+}
+/* Titoli */
+body, h1, h2 {
+  padding: 10px;
+  font-size: 32px;
+  color: #C9A227; /* oro */
+  text-align: center;
+}
+
+/* Testo */
+p {
+  padding: 10px;
+  font-size: 20px;
+  color: #F9FAFB; /* bianco */
+  text-align: center;
+}
+
+/* Form */
+form {
+  background-color: #141b24; /* nero */
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  text-align: center;
+  border: 1px solid #C9A227; /* bordo oro */
+}
+
+/* Input */
+input[type="number"], select {
+  width: 100%;
+  padding: 10px 12px;
+  margin: 10px 0 20px 0;
+  border: 1px solid #444;
+  font-size: 16px;
+  background-color: #1F2937;
+  color: #F9FAFB;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* Focus elegante */
+input[type="number"]:focus, select:focus {
+  border-color: #C9A227;
+  outline: none;
+  box-shadow: 0 0 5px #C9A227;
+}
+
+/* Bottone */
+input[type="submit"] {
+  padding: 10px 20px;
+  margin: 20px auto;
+  background-color: #C9A227; /* oro */
+  color: #141b24;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Hover bottone */
+input[type="submit"]:hover {
+  background-color: #FFD700; /* oro più brillante */
+  transform: scale(1.05);
+}
+.footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 50px;
+  border-top: 1px solid #C9A227;
+  color: #9ca3af;
+  width: 100%;
+  background-color: #141b24;
+}
+.logo {
+  font-size: 74px;
+  font-weight: bold;
+  color: #C9A227;
+  letter-spacing: 2px;
+}
+.contenuto {
+  flex: 1; /* occupa tutto lo spazio disponibile */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#recensione{
+  font-size: 25px;
+}
